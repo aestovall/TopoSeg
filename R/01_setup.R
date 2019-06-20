@@ -24,7 +24,7 @@ sites <- c("input")
 #Set up relative folder structure with a folder for each site
 #add an "output" and "R" folder for the output and scripts
 
-source('R/delineation_validation_FUN.R')
+# source('R/delineation_validation_FUN.R')
 
 res <- 0.01
 chm_res <- 4*res
