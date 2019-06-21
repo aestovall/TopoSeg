@@ -32,3 +32,5 @@ rstudioapi::terminalKill(termId)
 write.table(cbind(result,"04_delineation_preprocessing"), paste("../output/",dir_name,"_log.txt", sep=""), append = TRUE)
 
 file.move(input_file, paste("../output/", dir_name, sep = ""))
+
+setwd("..")
