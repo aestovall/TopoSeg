@@ -1,7 +1,8 @@
 #### INITIAL SETUP ######
 
-DTM_res <- 2.00
-res <- 0.04
+DTM_res <- 2.00 #DTM for the normalization step
+DTM_min_avg <- "MIN" # can also be "AVG" for an average normalization
+res <- 0.04 #final model resolution
 chm_res <- 4*res
 
 # Put your LiDAR data in the "input" folder
@@ -38,9 +39,6 @@ source('R/02_model.R')
 #Remove Trunks
 source('R/03_trunk_rem.R')
 
-#FINAL uncorrected MODEL
-source('R/model_final.R')
-
 #Normalize Site elevation
 source('R/04_delineation_preprocessing.R')
 
@@ -51,10 +49,10 @@ source('R/05_final_rasterization.R')
 source('R/06_plot.R')
 
 #LOAD TopoSeg Functions
-source('R/07_TopoSeg_FUN')
+source('R/07_TopoSeg_FUN.R')
 
 #TopoSeg PROCESSING####
-source('R/08_TopoSeg')
+source('R/08_TopoSeg.R')
 
 
 
@@ -62,19 +60,3 @@ source('R/08_TopoSeg')
 
 
 
-
-
-####COMING SOON#####
-
-#Delineate hummocks
-
-# tol_p<-0.05
-# th_tree_p<-0.2
-# setwd(wd)
-# ow = 0
-# dens = 1 #density analysis?
-# chm_res<-res*10
-# 
-# source('R/density.R')
-# 
-# source('R/delineation.R')

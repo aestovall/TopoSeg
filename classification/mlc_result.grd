@@ -1,0 +1,29 @@
+[general]
+creator=R package 'raster'
+created=2019-06-24 11:35:44
+[georeference]
+nrows=190
+ncols=162
+xmin=-10.25
+ymin=-23.25
+xmax=30.25
+ymax=24.25
+projection=+proj=utm +zone=11 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs
+[data]
+datatype=FLT4S
+byteorder=little
+nbands=1
+bandorder=BIL
+categorical=TRUE
+ratnames=ID:value
+rattypes=integer:factor
+ratvalues=1:2:1:2
+minvalue=1
+maxvalue=2
+nodatavalue=-3.4e+38
+[legend]
+legendtype=
+values=
+color=
+[description]
+layername=class
