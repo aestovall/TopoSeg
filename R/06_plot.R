@@ -23,9 +23,8 @@ hill = hillShade(slope, aspect, 40, 270)
 
 writeRaster(model1,gsub(".tif", "_smooth2x.tif", input_file), format = 'GTiff')
 
-png(paste("../../figures/",input_file,"_processed.png", sep = ""))
+png(paste("figures/",gsub(".asc", "_processed.png", base_name), sep = ""))
 plot(hill, col=grey(0:100/100), legend=FALSE, main='Hummock-Hollow Microtopography')
 plot(model, col=viridis(25, alpha=0.67), add=TRUE)
 dev.off()
 
-# setwd("../..")

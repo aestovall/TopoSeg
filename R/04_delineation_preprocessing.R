@@ -13,7 +13,7 @@ termId<-run(paste(cloudcompare, # call Cloud Compare. The .exe file folder must 
             "-NO_TIMESTAMP",
             "-O", input_file,
             "-AUTO_SAVE ON",
-            "-RASTERIZE", "-GRID_STEP", DTM_res, "-VERT_DIR", 2, "-PROJ", "AVG", "-SF_PROJ", "AVG","-EMPTY_FILL","INTERP", #calculate min raster grid
+            "-RASTERIZE", "-GRID_STEP", DTM_res, "-VERT_DIR", 2, "-PROJ", DTM_min_avg, "-SF_PROJ", "AVG","-EMPTY_FILL","INTERP", #calculate min raster grid
             "-OUTPUT_MESH",
             # "-OUTPUT_RASTER_Z",
             sep = " "))

@@ -23,7 +23,8 @@ if(!file.exists(paste("output/", dir_name, sep =""))) dir.create(paste("output/"
 #Make sure the setup file is correct and save
 # The most important step is to have Cloud Compare installed
 # and add the executable into the setup file
-file.edit('R/01_setup.R')
+
+# file.edit('R/01_setup.R')
 
 
 ###### RUN THE PIPELINE #########
@@ -49,6 +50,11 @@ source('R/05_final_rasterization.R')
 #OUTPUT PLOT
 source('R/06_plot.R')
 
+#LOAD TopoSeg Functions
+source('R/07_TopoSeg_FUN')
+
+#TopoSeg PROCESSING####
+source('R/08_TopoSeg')
 
 
 
