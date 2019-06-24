@@ -1,8 +1,6 @@
 #Delineation preprocessing
-DTM_res <- 2.00
-res     <- 0.01
 
-setwd("input")
+setwd(paste("processing/", dir_name, sep = ""))
 input_file = list.files(pattern = "asc")[1]
 file = gsub(".asc","*.asc",input_file)
 
@@ -29,7 +27,7 @@ result <- rstudioapi::terminalBuffer(termId)
 # Delete the buffer and close the session in the IDE
 rstudioapi::terminalKill(termId)
 
-write.table(cbind(result,"04_delineation_preprocessing"), paste("../output/",dir_name,"_log.txt", sep=""), append = TRUE)
+write.table(cbind(result,"04_delineation_preprocessing"), paste("../../output/",dir_name,"_log.txt", sep=""), append = TRUE)
 
 mesh = list.files(pattern = "bin")
 
@@ -41,7 +39,7 @@ termId<-run(paste(cloudcompare,
           "-NO_TIMESTAMP",
           "-O", input_file,
           "-AUTO_SAVE ON",
-          "-RASTERIZE", "-GRID_STEP", res, "-VERT_DIR", 2, "-PROJ", "MIN", "-SF_PROJ", "AVG","-EMPTY_FILL","INTERP", #calculate min raster grid
+          "-RASTERIZE", "-GRID_STEP", res, "-VERT_DIR", 2, "-PROJ", "MIN", "-SF_PROJ", "AVG", #calculate min raster grid
           "-OUTPUT_CLOUD",
           sep = " "))
 
@@ -54,9 +52,9 @@ result <- rstudioapi::terminalBuffer(termId)
 # Delete the buffer and close the session in the IDE
 rstudioapi::terminalKill(termId)
 
-write.table(cbind(result,"04_delineation_preprocessing"), paste("../output/",dir_name,"_log.txt", sep=""), append = TRUE)
+write.table(cbind(result,"04_delineation_preprocessing"), paste("../../output/",dir_name,"_log.txt", sep=""), append = TRUE)
 
-file.move(input_file, paste("../output/", dir_name, sep = ""))
+file.move(input_file, paste("../../output/", dir_name, sep = ""))
 
 input_file = list.files(pattern = "asc")[1]
 
@@ -82,12 +80,12 @@ result <- rstudioapi::terminalBuffer(termId)
 # Delete the buffer and close the session in the IDE
 rstudioapi::terminalKill(termId)
 
-write.table(cbind(result,"04_delineation_preprocessing"), paste("../output/",dir_name,"_log.txt", sep=""), append = TRUE)
+write.table(cbind(result,"04_delineation_preprocessing"), paste("../../output/",dir_name,"_log.txt", sep=""), append = TRUE)
 
-file.move(input_file, paste("../output/", dir_name, sep = ""))
-file.move(mesh, paste("../output/", dir_name, sep = ""))
+file.move(input_file, paste("../../output/", dir_name, sep = ""))
+file.move(mesh, paste("../../output/", dir_name, sep = ""))
 
 
-setwd("..")
+setwd("../..")
 
 

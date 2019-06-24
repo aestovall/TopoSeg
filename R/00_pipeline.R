@@ -1,13 +1,22 @@
 #### INITIAL SETUP ######
 
 DTM_res <- 2.00
-res <- 0.01
+res <- 0.04
 chm_res <- 4*res
 
 # Put your LiDAR data in the "input" folder
 base_name<-list.files('input', pattern = "asc")
 dir_name<-gsub(".asc","",base_name)
-dir.create(paste("output/", dir_name, sep =""))
+
+dir.remove(paste("processing/", dir_name, sep =""))
+dir.remove(paste("output/", dir_name, sep =""))
+
+if(!file.exists("processing")) dir.create("processing")
+if(!file.exists(paste("processing/", dir_name, sep =""))) dir.create(paste("processing/", dir_name, sep =""))
+
+if(!file.exists("output")) dir.create("output")
+if(!file.exists(paste("output/", dir_name, sep =""))) dir.create(paste("output/", dir_name, sep =""))
+
 
 #### EDIT THE SETUP FILE FOR YOUR SYSTEM ####
 
@@ -15,6 +24,7 @@ dir.create(paste("output/", dir_name, sep =""))
 # The most important step is to have Cloud Compare installed
 # and add the executable into the setup file
 file.edit('R/01_setup.R')
+
 
 ###### RUN THE PIPELINE #########
 

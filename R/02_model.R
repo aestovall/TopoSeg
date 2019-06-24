@@ -26,7 +26,8 @@ result <- rstudioapi::terminalBuffer(termId)
 # Delete the buffer and close the session in the IDE
 rstudioapi::terminalKill(termId)
 
-file.move(input_file, paste("../output/", dir_name, sep = ""))
+input_file = list.files(pattern = "asc")[1]
+file.move(input_file, paste("../processing/", dir_name, sep = ""))
 setwd("..")
 
-write.table(cbind(result,"02_model"), paste("output/",dir_name,"_log.txt", sep=""), append = TRUE)
+write.table(cbind(result,"02_model"), paste("output/",dir_name,"/",dir_name,"_log.txt", sep=""), append = TRUE)
