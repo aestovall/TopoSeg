@@ -1,7 +1,6 @@
 ![TopoSeg](TopoSeg.png)
 
-Algorithms described in "Quantifying Wetland Microtopography with Terrestrial Laser Scanning" (Stovall et al. 2019) for generating microtopographic surface models
-
+Algorithms described in "Quantifying Wetland Microtopography with Terrestrial Laser Scanning" (Stovall et al. 2019) for generating microtopographic surface models. Read the paper here: http://bit.ly/2JMLVEg
 ## INITIAL SETUP
 
 ```{r,echo=FALSE}
